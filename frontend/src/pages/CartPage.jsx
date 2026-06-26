@@ -31,7 +31,7 @@ function formatExpiry(v) {
   return d.length > 2 ? d.slice(0, 2) + "/" + d.slice(2) : d;
 }
 
-const UPI_APPS = ["GPay", "PhonePe", "Paytm", "BHIM"];
+const UPI_APPS = ["G-PAY", "PhonePe", "Paytm", "BHIM"];
 
 export default function CartPage({ setPage }) {
   const { state, dispatch } = useStore();
@@ -60,8 +60,8 @@ export default function CartPage({ setPage }) {
     if (payMethod === "card") {
       if (card.number.replace(/\s/g, "").length < 16) { setCardErr("Enter a valid 16-digit card number"); return; }
       if (card.expiry.length < 5) { setCardErr("Enter valid expiry MM/YY"); return; }
-      if (card.cvv.length < 3)   { setCardErr("Enter valid CVV"); return; }
-      if (!card.name.trim())      { setCardErr("Enter cardholder name"); return; }
+      if (card.cvv.length < 3)   { setCardErr("Enter valid CVV:"); return; }
+      if (!card.name.trim())      { setCardErr("Enter cardholder name:"); return; }
     }
     if (payMethod === "upi" && !upiId.trim() && !selectedUpi) { setCardErr("Enter UPI ID or select an app"); return; }
     if (!address.name.trim() || !address.phone.trim() || !address.line1.trim() || !address.city.trim() || !address.pin.trim()) {
