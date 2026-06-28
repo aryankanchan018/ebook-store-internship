@@ -160,7 +160,7 @@ export default function LoginPage() {
           </div>
 
           <div className="login-card-header">
-            <h3>{mode === "login" ? "Welcome back 👋" : "Join BookSphere 🚀"}</h3>
+            <h3>{mode === "login" ? "Welcome back 👋" : "Join BookSphere "}</h3>
             <p>{mode === "login" ? "Sign in to continue your reading journey" : "Create your account — it's free"}</p>
           </div>
 
