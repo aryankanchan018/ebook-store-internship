@@ -49,7 +49,7 @@ export default function DeliveryPage() {
       <div className="section-heading">
         <div>
           <span className="eyebrow">Shipping & logistics</span>
-          <h2>🚚 Track Your Order</h2>
+          <h2> Track Your Order</h2>
         </div>
       </div>
 
@@ -132,14 +132,14 @@ export default function DeliveryPage() {
                   <span>📅</span>
                   <div>
                     <strong>Expected Delivery: {getDeliveryDate(order.status === "PROCESSING" ? 1 : deliveryDays)}</strong>
-                    <p>{order.isPremium ? "⭐ Priority delivery — arrives faster" : "Standard delivery"}</p>
+                    <p>{order.isPremium ? " Priority delivery — arrives faster" : "Standard delivery"}</p>
                   </div>
                 </div>
               )}
 
               {/* Items in order */}
               <div className="tracking-items">
-                <h4>📦 Items in this order</h4>
+                <h4> Items in this order:</h4>
                 <div className="order-items" style={{ marginTop: 8 }}>
                   {order.items.map(({ product, qty }) => (
                     <span key={product.id} className="order-item-chip">{product.name} ×{qty}</span>
@@ -152,7 +152,7 @@ export default function DeliveryPage() {
 
               {/* Route finder */}
               <div className="tracking-route">
-                <h4>🗺️ Delivery Route</h4>
+                <h4> Delivery Route</h4>
                 <p style={{ color: "var(--muted)", fontSize: "0.82rem", marginBottom: 12 }}>
                   Estimated route from our warehouse to your city.
                 </p>
