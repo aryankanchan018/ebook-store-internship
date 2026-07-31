@@ -55,7 +55,7 @@ export default function WishlistPage({ setPage }) {
                   setPage("BookDetail");
                 }}
               >
-                <span>📖</span>
+                <span></span>
                 <div>
                   <strong>{book.name}</strong>
                   <small>by {book.author} · {book.category}</small>
