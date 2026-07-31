@@ -1,74 +1,121 @@
-# 📚 BookSphere — Frontend
+# 📚 BookSphere — eBook Store
 
-React 18 + Vite frontend for BookSphere, connected to Supabase backend.
-
-🌐 **Live:** [booksphere-dun.vercel.app](https://booksphere-dun.vercel.app)
+A modern, fully frontend bookstore SPA built with **React + Vite**. No backend required — runs entirely in the browser using mock data and client-side algorithms.
 
 ---
 
-## 🚀 Setup
+## 🚀 Getting Started
 
 ```bash
+cd frontend
 npm install
-cp .env.example .env   # fill in Supabase keys
 npm run dev
 ```
 
-## 🔑 Environment Variables
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## ✨ Features
+
+### 🏠 Catalog
+- Hero section with animated floating book card
+- **Trending Now** and **New Arrivals** horizontal shelf sliders
+- Search by title, author, or tag (with hash-map based index for O(1) lookups)
+- Filter by genre using a **tree-structured category sidebar**
+- Price range filter with instant results
+- Sort by Featured, Price (Low→High / High→Low), or Highest Rated
+- Recently Viewed and Wishlist sidebar panels
+
+### 📖 Book Detail Page
+- Full book info: cover image, description, publisher, ISBN, year, pages
+- Star rating breakdown (Amazon-style distribution chart)
+- Format selector (Paperback / Hardcover / eBook)
+- Delivery date estimate
+- **BFS-powered "Customers also bought"** recommendations using a graph traversal
+- More by same author section
+- Share to clipboard button
+- Add to Cart / Wishlist actions
+
+### 🛒 Cart & Checkout
+- Quantity stepper, remove with **undo** (stack-based)
+- **Knapsack algorithm** for optimal coupon/discount selection
+- 3-step checkout flow: Cart → Checkout → Confirmation
+- Payment methods: Credit/Debit Card, UPI (GPay, PhonePe, Paytm, BHIM), Cash on Delivery
+- Delivery address form with validation
+- Order summary with savings badge
+
+### 📦 Orders
+- Order history with status tracking (PENDING → PROCESSING → DELIVERED)
+- Priority queue — Premium users get priority processing
+
+### 🚚 Delivery
+- **Dijkstra's shortest path algorithm** for delivery route calculation
+- Visual route map between Indian cities (Mumbai, Pune, Hyderabad, Bangalore, Chennai, etc.)
+
+### 🎯 Recommendations Page
+- BFS graph traversal across the book relationship graph
+- Depth-configurable recommendations
+
+### 👤 Profile
+- User info display
+- Premium membership status
+
+### ⭐ Premium
+- Premium membership page with feature highlights
+
+### Other Pages
+- Wishlist, Feedback, Terms & Conditions, UX showcase page
+
+---
+
+## 🧠 Data Structures & Algorithms Used
+
+| Feature | DSA |
+|---|---|
+| Book search | Hash Map (tag index) |
+| Recommendations | BFS on adjacency graph |
+| Delivery routing | Dijkstra's shortest path |
+| Coupon optimization | 0/1 Knapsack (DP) |
+| Cart undo | Stack |
+| Order priority | Priority Queue (sort by priority) |
+| Category browsing | Tree traversal |
+| Price sorting | Merge sort (Array.sort) |
+
+---
+
+## 🗂️ Project Structure
 
 ```
-VITE_SUPABASE_URL=https://your-project-id.supabase.co
-VITE_SUPABASE_ANON_KEY=your_publishable_key_here
+frontend/
+├── src/
+│   ├── components/       # Navbar, Footer, ProductCard, ShelfSlider, CategoryTree, Toast
+│   ├── data/             # mockData.js — books, graphs, metadata
+│   ├── lib/              # supabase.js (mock client, no backend needed)
+│   ├── pages/            # All page components
+│   ├── store/            # useStore.jsx — global state with useReducer
+│   ├── App.jsx
+│   └── index.css
+├── index.html
+├── vite.config.js
+└── package.json
 ```
 
 ---
 
-## 📁 Structure
+## 🛠️ Tech Stack
 
-```
-src/
-├── lib/supabase.js          ← Supabase client singleton
-├── store/useStore.jsx       ← global state + all DSA logic
-├── components/
-│   ├── Navbar.jsx
-│   ├── ProductCard.jsx
-│   └── CategoryTree.jsx
-├── pages/
-│   ├── LoginPage.jsx        ← Email + Google OAuth
-│   ├── CatalogPage.jsx      ← HashMap search, Tree genre browse
-│   ├── CartPage.jsx         ← ArrayList cart, Stack undo, DP coupons
-│   ├── OrdersPage.jsx       ← Queue + PriorityQueue orders
-│   ├── DeliveryPage.jsx     ← Graph + Dijkstra shortest path
-│   ├── RecommendationsPage.jsx ← Graph + BFS recommendations
-│   └── UXPage.jsx
-├── data/mockData.js         ← delivery graph, rec graph, category tree
-├── App.jsx
-└── index.css
-```
+- **React 18** — UI
+- **Vite 4** — Build tool & dev server
+- **useReducer + Context API** — Global state management (no Redux)
+- **Vanilla CSS** — Custom styling, no UI library
 
 ---
 
-## 🧩 DSA Features
+## 📦 Build for Production
 
-| Feature | Data Structure | File |
-|---------|---------------|------|
-| Book Search | HashMap | `useStore.jsx` |
-| Cart | ArrayList | `useStore.jsx` |
-| Undo Remove | Stack | `useStore.jsx` |
-| Orders | Queue + PriorityQueue | `useStore.jsx` |
-| Wishlist | HashSet | `useStore.jsx` |
-| Price Filter | TreeMap | `useStore.jsx` |
-| Genre Browse | N-ary Tree | `CategoryTree.jsx` |
-| Delivery | Graph + Dijkstra | `useStore.jsx` |
-| Recently Viewed | LinkedList | `useStore.jsx` |
-| Discount | 0/1 Knapsack DP | `useStore.jsx` |
-| Recommendations | Graph + BFS | `useStore.jsx` |
+```bash
+npm run build
+```
 
----
-
-## 🗄️ Supabase Tables Used
-
-`books` · `coupons` · `orders` · `wishlists` · `carts` · `recently_viewed`
-
-See [`../BACKEND.md`](../BACKEND.md) for full backend docs.
-See [`../supabase_setup.sql`](../supabase_setup.sql) to set up the database.
+Output goes to `frontend/dist/`.
