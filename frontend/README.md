@@ -2,6 +2,8 @@
 
 A modern, fully frontend bookstore SPA built with **React + Vite**. No backend required — runs entirely in the browser using mock data and client-side algorithms.
 
+🌐 **Live Demo:** [https://ebook-store-internship-jue8.vercel.app](https://ebook-store-internship-jue8.vercel.app)
+
 ---
 
 ##  Getting Started
@@ -119,3 +121,18 @@ npm run build
 ```
 
 Output goes to `frontend/dist/`.
+
+---
+
+##  Deployment
+
+This project is deployed on **Vercel**.
+
+🔗 [https://ebook-store-internship-jue8.vercel.app](https://ebook-store-internship-jue8.vercel.app)
+
+To deploy your own:
+1. Push the repo to GitHub
+2. Import the project on [vercel.com](https://vercel.com)
+3. Set **Root Directory** to `frontend`
+4. Add environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`)
+5. Click Deploy
