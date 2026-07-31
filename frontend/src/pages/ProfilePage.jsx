@@ -51,7 +51,7 @@ export default function ProfilePage({ setPage }) {
           <p>{user?.email}</p>
           <div className="profile-badges">
             {user?.isPremium
-              ? <span className="badge-premium">⭐ Premium Member</span>
+              ? <span className="badge-premium"> Premium Member</span>
               : <span className="badge-free">Free Plan</span>
             }
             <span className="badge-joined">Member since {joinDate}</span>
@@ -59,7 +59,7 @@ export default function ProfilePage({ setPage }) {
         </div>
         {!user?.isPremium && (
           <button className="btn-primary profile-upgrade" onClick={() => setPage("Premium")}>
-            ⭐ Upgrade to Premium
+             Upgrade to Premium
           </button>
         )}
       </div>
@@ -96,10 +96,10 @@ export default function ProfilePage({ setPage }) {
       <div className="profile-tabs">
         {["profile", "orders", "wishlist", "settings"].map(t => (
           <button key={t} className={tab === t ? "active" : ""} onClick={() => setTab(t)}>
-            {t === "profile" && "👤 Profile"}
-            {t === "orders" && `📦 Orders (${orders.length})`}
-            {t === "wishlist" && `💖 Wishlist (${wishlist.size})`}
-            {t === "settings" && "⚙️ Settings"}
+            {t === "profile" && " Profile"}
+            {t === "orders" && ` Orders (${orders.length})`}
+            {t === "wishlist" && ` Wishlist (${wishlist.size})`}
+            {t === "settings" && " Settings"}
           </button>
         ))}
       </div>
@@ -125,7 +125,7 @@ export default function ProfilePage({ setPage }) {
             </div>
             <div className="profile-field">
               <label>Account Type</label>
-              <input value={user?.isPremium ? "Premium Member ⭐" : "Free Plan"} disabled className="input-disabled" />
+              <input value={user?.isPremium ? "Premium Member " : "Free Plan"} disabled className="input-disabled" />
             </div>
             <div className="profile-field">
               <label>User ID</label>
@@ -142,7 +142,7 @@ export default function ProfilePage({ setPage }) {
                     dispatch({ type: "SELECT_BOOK", payload: p });
                     setPage("BookDetail");
                   }}>
-                    <span className="profile-recent-emoji">📖</span>
+                    <span className="profile-recent-emoji"></span>
                     <div>
                       <strong>{p.name}</strong>
                       <small>by {p.author}</small>
@@ -207,7 +207,7 @@ export default function ProfilePage({ setPage }) {
                 return (
                   <div key={id} className="profile-wishlist-item">
                     <div className="profile-wishlist-info">
-                      <span>📖</span>
+                      <span></span>
                       <div>
                         <strong>{book.name}</strong>
                         <small>by {book.author} · {book.category}</small>
@@ -236,7 +236,7 @@ export default function ProfilePage({ setPage }) {
           <h3>Account Settings</h3>
 
           <div className="settings-group">
-            <h4>🔒 Change Password</h4>
+            <h4> Change Password</h4>
             <div className="profile-field">
               <label>New Password</label>
               <div className="profile-input-row">
@@ -258,20 +258,20 @@ export default function ProfilePage({ setPage }) {
           </div>
 
           <div className="settings-group">
-            <h4>⭐ Membership</h4>
+            <h4> Membership</h4>
             <div className="settings-info-row">
               <div>
                 <strong>{user?.isPremium ? "Premium Member" : "Free Plan"}</strong>
                 <p>{user?.isPremium ? "Priority order processing, faster delivery queue" : "Standard order processing"}</p>
               </div>
               {!user?.isPremium && (
-                <button className="btn-primary" onClick={() => setPage("Premium")}>Upgrade ⭐</button>
+                <button className="btn-primary" onClick={() => setPage("Premium")}>Upgrade </button>
               )}
             </div>
           </div>
 
           <div className="settings-group">
-            <h4>📊 Account Stats</h4>
+            <h4> Account Stats</h4>
             <div className="settings-stats">
               <div><span>Email</span><strong>{user?.email}</strong></div>
               <div><span>Orders</span><strong>{orders.length}</strong></div>
