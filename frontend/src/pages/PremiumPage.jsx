@@ -35,7 +35,7 @@ const PLANS = [
       "Everything in Free",
       "Priority order processing",
       "Orders always processed first",
-      "⭐ Premium badge on profile",
+      " Premium badge on profile",
       "First in queue — always",
       "Exclusive discount coupons",
     ],
@@ -114,7 +114,7 @@ function PaymentModal({ onClose, onSuccess }) {
             <div className="lf-field">
               <label>CVV</label>
               <div className="lf-input-wrap">
-                <span className="lf-icon">🔒</span>
+                <span className="lf-icon"></span>
                 <input
                   type="password" placeholder="•••"
                   value={card.cvv}
@@ -128,7 +128,7 @@ function PaymentModal({ onClose, onSuccess }) {
           <div className="lf-field">
             <label>Cardholder Name</label>
             <div className="lf-input-wrap">
-              <span className="lf-icon">👤</span>
+              <span className="lf-icon"></span>
               <input
                 type="text" placeholder="Name on card"
                 value={card.name}
@@ -144,7 +144,7 @@ function PaymentModal({ onClose, onSuccess }) {
           </button>
         </form>
 
-        <p className="payment-secure-note">🔒 Payments are encrypted and secure. This is a demo — no real charge occurs.</p>
+        <p className="payment-secure-note"> Payments are encrypted and secure. This is a demo — no real charge occurs.</p>
       </div>
     </div>
   );
