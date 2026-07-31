@@ -1,10 +1,10 @@
-# 📚 BookSphere — eBook Store
+# BookSphere — eBook Store
 
 A modern, fully frontend bookstore SPA built with **React + Vite**. No backend required — runs entirely in the browser using mock data and client-side algorithms.
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ```bash
 cd frontend
@@ -16,9 +16,9 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🏠 Catalog
+### Catalog
 - Hero section with animated floating book card
 - **Trending Now** and **New Arrivals** horizontal shelf sliders
 - Search by title, author, or tag (with hash-map based index for O(1) lookups)
@@ -27,7 +27,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 - Sort by Featured, Price (Low→High / High→Low), or Highest Rated
 - Recently Viewed and Wishlist sidebar panels
 
-### 📖 Book Detail Page
+###  Book Detail Page
 - Full book info: cover image, description, publisher, ISBN, year, pages
 - Star rating breakdown (Amazon-style distribution chart)
 - Format selector (Paperback / Hardcover / eBook)
@@ -37,7 +37,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 - Share to clipboard button
 - Add to Cart / Wishlist actions
 
-### 🛒 Cart & Checkout
+###  Cart & Checkout
 - Quantity stepper, remove with **undo** (stack-based)
 - **Knapsack algorithm** for optimal coupon/discount selection
 - 3-step checkout flow: Cart → Checkout → Confirmation
@@ -45,23 +45,23 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 - Delivery address form with validation
 - Order summary with savings badge
 
-### 📦 Orders
+###  Orders
 - Order history with status tracking (PENDING → PROCESSING → DELIVERED)
 - Priority queue — Premium users get priority processing
 
-### 🚚 Delivery
+###  Delivery
 - **Dijkstra's shortest path algorithm** for delivery route calculation
 - Visual route map between Indian cities (Mumbai, Pune, Hyderabad, Bangalore, Chennai, etc.)
 
-### 🎯 Recommendations Page
+###  Recommendations Page
 - BFS graph traversal across the book relationship graph
 - Depth-configurable recommendations
 
-### 👤 Profile
+###  Profile
 - User info display
 - Premium membership status
 
-### ⭐ Premium
+###  Premium
 - Premium membership page with feature highlights
 
 ### Other Pages
@@ -69,7 +69,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🧠 Data Structures & Algorithms Used
+##  Data Structures & Algorithms Used
 
 | Feature | DSA |
 |---|---|
@@ -84,7 +84,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 frontend/
@@ -103,7 +103,7 @@ frontend/
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **React 18** — UI
 - **Vite 4** — Build tool & dev server
@@ -112,7 +112,7 @@ frontend/
 
 ---
 
-## 📦 Build for Production
+##  Build for Production
 
 ```bash
 npm run build
