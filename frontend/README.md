@@ -136,3 +136,11 @@ To deploy your own:
 3. Set **Root Directory** to `frontend`
 4. Add environment variables (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`)
 5. Click Deploy
+
+---
+
+##  Notes
+
+- All data is mock/client-side — no real backend or database
+- Algorithms (BFS, Dijkstra, Knapsack) are implemented from scratch in vanilla JS
+- Fully responsive design for mobile and desktop
