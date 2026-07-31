@@ -27,7 +27,7 @@ export default function OrdersPage({ setPage }) {
   }
 
   const statusLabel = { PENDING: "Pending", PROCESSING: "Out for delivery", DELIVERED: "Delivered" };
-  const statusIcon  = { PENDING: , PROCESSING: , DELIVERED:  };
+  const statusIcon  = { PENDING: "🕐", PROCESSING: "🚚", DELIVERED: "✅" };
 
   return (
     <div className="page">
