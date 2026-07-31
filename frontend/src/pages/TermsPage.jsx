@@ -8,7 +8,7 @@ export default function TermsPage() {
       <div className="section-heading">
         <div>
           <span className="eyebrow">Legal</span>
-          <h2>📄 Terms &amp; Privacy</h2>
+          <h2> Terms &amp; Privacy</h2>
         </div>
       </div>
 
