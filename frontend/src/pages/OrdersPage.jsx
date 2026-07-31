@@ -27,20 +27,20 @@ export default function OrdersPage({ setPage }) {
   }
 
   const statusLabel = { PENDING: "Pending", PROCESSING: "Out for delivery", DELIVERED: "Delivered" };
-  const statusIcon  = { PENDING: "🕐", PROCESSING: "🚚", DELIVERED: "✅" };
+  const statusIcon  = { PENDING: , PROCESSING: , DELIVERED:  };
 
   return (
     <div className="page">
       <div className="section-heading">
         <div>
           <span className="eyebrow">Your purchases</span>
-          <h2>📦 My Orders</h2>
+          <h2> My Orders</h2>
         </div>
       </div>
 
       <div className="queue-info">
         {state.user?.isPremium && (
-          <span className="badge-premium" style={{ fontSize: "0.82rem" }}>⭐ Your orders are processed with priority</span>
+          <span className="badge-premium" style={{ fontSize: "0.82rem" }}> Your orders are processed with priority</span>
         )}
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           <button
@@ -51,7 +51,7 @@ export default function OrdersPage({ setPage }) {
             ▶ Process Next Order
           </button>
           <button className="btn-sm" onClick={() => setPage("Delivery")}>
-            🚚 Track Delivery Route
+             Track Delivery Route
           </button>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function OrdersPage({ setPage }) {
                 <span className={`status ${order.status.toLowerCase()}`}>
                   {statusIcon[order.status]} {statusLabel[order.status]}
                 </span>
-                {order.isPremium && <span className="premium-badge">⭐ Priority</span>}
+                {order.isPremium && <span className="premium-badge"> Priority</span>}
               </div>
               <p>Total: ₹{order.total.toLocaleString()}</p>
               <div className="order-items">
@@ -77,7 +77,7 @@ export default function OrdersPage({ setPage }) {
               </div>
               {order.status === "PROCESSING" && (
                 <p style={{ fontSize: "0.78rem", color: "var(--mint)" }}>
-                  🚚 Your order is on the way — delivery confirmation incoming shortly…
+                   Your order is on the way — delivery confirmation incoming shortly…
                 </p>
               )}
             </div>
